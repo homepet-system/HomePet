@@ -283,7 +283,7 @@ CREATE TABLE Ajustes(
     Cod_Prod dom_codigo NOT NULL,
     Fecha_Ajuste varchar(10) NOT NULL,
     Dif_Teorica_Fisica integer NOT NULL,
-    Tipo_Ajuste char NOT NULL CHECK(value = 'S' or value = 'F'),
+    Tipo_Ajuste char NOT NULL CHECK(Tipo_Ajuste = 'S' or Tipo_Ajuste = 'F'),
 
     PRIMARY KEY (RIF_Homepet,Cod_Prod,Fecha_Ajuste),
     FOREIGN KEY (RIF_Homepet,Cod_Prod)
