@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="429.0" styleClass="primary-light" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label contentDisplay="TOP" text="Productos que Posee" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Raleway" size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </BorderPane.margin>
+         <graphic>
+            <FontAwesomeIcon glyphName="DROPBOX" size="2.5em" />
+         </graphic>
+      </Label>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
+         <content>
+            <ListView fx:id="productList" prefHeight="396.0" prefWidth="427.0" styleClass="primary-light" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
