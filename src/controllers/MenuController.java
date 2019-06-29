@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.Main;
 
@@ -37,9 +39,6 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        dashboard.getStyleClass().removeAll("menuItem");
-        dashboard.getStyleClass().add("menuItem-Selected");
-
         hBoxes[0] = dashboard;
         hBoxes[1] = homePets;
         hBoxes[2] = clients;
@@ -121,17 +120,15 @@ public class MenuController implements Initializable {
         }
         for (int j = 0; j<13; j++){
             if(j==i){
-                hBoxes[j].getStyleClass().removeAll("menuItem");
-                hBoxes[j].getStyleClass().add("menuItem-Selected");
+                hBoxes[j].getStyleClass().removeAll("item");
+                hBoxes[j].getStyleClass().add("item-selected");
             }else{
-                hBoxes[j].getStyleClass().removeAll("menuItem-Selected");
-                hBoxes[j].getStyleClass().add("menuItem");
+                hBoxes[j].getStyleClass().removeAll("item-selected");
+                hBoxes[j].getStyleClass().add("item");
             }
         }
-        VBox vBox = (VBox) Main.myStage.getScene().getRoot().getChildrenUnmodifiable().get(1);
-        vBox  = (VBox)vBox.getChildren().get(1);
-        System.out.println(table.get(i).toString());
-
-        //vBox.getChildren().addAll(table.get(i));
+        contenido = (Parent) Main.myStage.getScene().getRoot().getChildrenUnmodifiable().get(1);
+        contenido = (Parent)contenido.getChildrenUnmodifiable().get(1);
+        ((Pane)contenido).getChildren().setAll(table.get(i));
     }
 }

@@ -14,7 +14,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" size="2.5em" />
             <Label text="Dashboard" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -30,7 +30,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="2.5em" />
             <Label text="HomePets" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -46,7 +46,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="CHILD" size="2.5em" />
             <Label text="Clientes" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -62,7 +62,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="2.5em" />
             <Label text="Empleados" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -78,7 +78,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="PAW" size="2.5em" />
             <Label text="Animales" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -94,7 +94,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="HORSE_HEAD" size="2.5em" />
             <Label text="Mascotas" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -110,7 +110,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="COGS" size="2.5em" />
             <Label text="Servicios" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -126,7 +126,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="DROPBOX" size="2.5em" />
             <Label text="Productos" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -142,7 +142,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" size="2.5em" />
             <Label text="Reservaciones" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -158,7 +158,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="SHOPPING_CART" size="2.5em" />
             <Label text="Compras" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -174,7 +174,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="SUITCASE" size="2.5em" />
             <Label text="Proveedores" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -190,7 +190,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="CREDIT_CARD" size="2.5em" />
             <Label text="Facturación" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
@@ -206,7 +206,7 @@
             <FontAwesomeIcon fill="WHITE" glyphName="LEANPUB" size="2.5em" />
             <Label text="Libros" textFill="WHITE">
                <font>
-                  <Font name="Roboto Regular" size="16.0" />
+                  <Font name="Raleway" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="10.0" />
