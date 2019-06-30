@@ -20,6 +20,17 @@ CREATE TYPE nombre_apellido AS(
     apellido dom_nombre_apellido
 );
 
+CREATE TABLE Usuarios (
+	Cod_User dom_codigo NOT NULL,
+	Alias_Usuario varchar(20) NOT NULL,
+	Nombre nombre_apellido NOT NULL,
+	Contrasenia dom_codigo NOT NULL,
+	Tipo_Usuario VARCHAR(15) NOT NULL 
+        CHECK(Tipo_Usuario = 'Encargado' OR Tipo_Usuario = 'Empleado' OR Tipo_Usuario = 'Administrador'),
+		
+	PRIMARY KEY (Cod_User)
+);
+
 CREATE TABLE Animales (
     Cod_Animal dom_codigo,
     Descripcion varchar(140) NOT NULL,
