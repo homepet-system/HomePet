@@ -17,7 +17,7 @@
             <Font name="Raleway" size="28.0" />
          </font>
          <graphic>
-            <FontAwesomeIcon glyphName="COGS" selectionStart="1" size="2.5em" />
+            <FontAwesomeIcon glyphName="COGS"  size="2.5em" />
          </graphic>
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />
