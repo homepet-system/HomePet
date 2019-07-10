@@ -1,47 +1,38 @@
-CREATE DOMAIN dom_codigo AS
-    varchar(5) NOT NULL
-;
+--Creacion de las Tablas----------------------------------------------------------------------------------------------
 
-CREATE DOMAIN dom_sexo AS
-    char (1) NOT NULL
-    CHECK (VALUE='F' OR VALUE='M')
-;
-
-CREATE DOMAIN dom_cedula AS
-    varchar (10) NOT NULL
-;
-
-CREATE DOMAIN dom_nombre_apellido AS
-    varchar(40) NOT NULL
-;
-
-CREATE TYPE nombre_apellido AS(
-    nombre dom_nombre_apellido,
-    apellido dom_nombre_apellido
+CREATE TABLE IF NOT EXISTS Usuarios (
+		cod_user dom_codigo NOT NULL,
+		alias_usuario varchar(20) NOT NULL,
+		nombre nombre_apellido NOT NULL,
+		contrasenia dom_codigo NOT NULL,
+		tipo_usuario VARCHAR(15) NOT NULL CHECK(tipo_usuario = 'Encargado' OR tipo_usuario = 'Empleado' OR tipo_usuario = 'Administrador'),
+		
+		PRIMARY KEY (cod_user)
 );
 
 CREATE TABLE Animales (
-    Cod_Animal dom_codigo,
+    Cod_Animal dom_codigo  NOT NULL,
     Descripcion varchar(140) NOT NULL,
 
     PRIMARY KEY (Cod_Animal)
 );
 
 CREATE TABLE Veterinarios (
-    Cedula dom_cedula,
-    Nombre nombre_apellido,
+    Cedula dom_cedula  NOT NULL,
+    Nombre nombre_apellido NOT NULL,
     Telefono varchar(15) NOT NULL,
 
     PRIMARY KEY (Cedula)
 );
 
 CREATE TABLE Razas (
-    Cod_Raza dom_codigo,
+		
+		Cod_Raza dom_codigo,
     Nombre varchar(30) NOT NULL,
     Pais_Origen varchar(15) NOT NULL,
     Descripcion varchar (60) NOT NULL,
     Talla varchar(15) NOT NULL
-        CHECK (Talla='Pequeña' OR Talla='Mediana' OR Talla='Grande'),
+        CHECK (Talla='Pequenia' OR Talla='Mediana' OR Talla='Grande'),
     Cntxt_Frt varchar(2) NOT NULL
         CHECK (Cntxt_Frt='Si' OR Cntxt_Frt='No' OR Cntxt_Frt='S' OR Cntxt_Frt='N'),
     Nivel_Int varchar(10) NOT NULL
@@ -75,14 +66,12 @@ CREATE TABLE Homepets (
     Nombre varchar(20) NOT NULL,
     Ciudad varchar(15) NOT NULL,
     Sector varchar(15) NOT NULL,
-    Cod_Animal dom_codigo,
+    Cod_Animal VARCHAR(5),
+		Cantidad INTEGER,
 
     PRIMARY KEY (RIF),
     CONSTRAINT un_Homepets UNIQUE (Ciudad, Sector),
-    FOREIGN KEY (Cod_Animal)
-        REFERENCES Animales(Cod_Animal)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    FOREIGN KEY (Cod_Animal) REFERENCES Animales(Cod_Animal) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE Productos (
@@ -91,7 +80,7 @@ CREATE TABLE Productos (
     Descripcion varchar(40) NOT NULL,
     Costo varchar(15) NOT NULL,
     Cantidad_Minima integer NOT NULL,
-    Cantidad_Disponible integer NOT NULL,
+		Cantidad_Disponible integer NOT NULL,
     Tipo varchar(10) NOT NULL,
     RIF_Homepet varchar(20) NOT NULL,
 
@@ -111,59 +100,46 @@ CREATE TABLE Servicios (
 );
 
 CREATE TABLE Duenios (
-    Cedula dom_cedula,
-    Nombre_Completo nombre_apellido,
+    Cedula dom_cedula	NOT NULL,
+    Nombre_Completo nombre_apellido NOT NULL,
     Email varchar(40),
+		Cantidad_Mascotas INTEGER,
 
     PRIMARY KEY (Cedula)
 );
 
 CREATE TABLE Mascotas (
-    Cod_Mascota dom_codigo,
+    Cod_Mascota dom_codigo NOT NULL,
     Nombre varchar(30) NOT NULL,
-    Fecha_Nac varchar(10) NOT NULL,
+    Fecha_Nac date NOT NULL,
     Tipo_Animal varchar(10) NOT NULL,
     Sexo dom_sexo,
     Cedula_Duenio dom_cedula,
-    Cod_Raza dom_codigo,
-    Cod_Animal dom_codigo,
+    Cod_Raza dom_codigo NOT NULL,
+    Cod_Animal dom_codigo NOT NULL,
     Cod_Prod dom_codigo,
     RIF_Homepet varchar(20) NOT NULL,
     Cedula_Vet dom_cedula,
     
     PRIMARY KEY(Cod_Mascota),
-    FOREIGN KEY (Cedula_Duenio)
-        REFERENCES Duenios(Cedula)
-        ON UPDATE CASCADE 
-        ON DELETE RESTRICT,
-    FOREIGN KEY(Cod_Raza)
-        REFERENCES Raza_Animal(Cod_Raza)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (Cod_Animal)
-        REFERENCES Raza_Animal(Cod_Animal)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (Cod_Prod)
-        REFERENCES Productos(Cod_Prod)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (RIF_Homepet)
-        REFERENCES Homepets(RIF)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (Cedula_Vet)
-        REFERENCES Veterinarios(Cedula)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    FOREIGN KEY (Cedula_Duenio) REFERENCES Duenios(Cedula) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY(Cod_Raza) REFERENCES Raza_Animal(Cod_Raza) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (Cod_Animal) REFERENCES Raza_Animal(Cod_Animal) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (Cod_Prod) REFERENCES Productos(Cod_Prod) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (RIF_Homepet) REFERENCES Homepets(RIF) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (Cedula_Vet) REFERENCES Veterinarios(Cedula) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE Cantidad_Suministrar_Producto_Mascota(
-    Cod_Prod varchar (5) NOT NULL,
+		Cod_Mascota dom_codigo,
+    Cod_Prod dom_codigo,
+		Tipo_Comida VARCHAR(20),
     Cantidad_Smnt integer NOT NULL
         CHECK (Cantidad_Smnt > '0'),
     
-    PRIMARY KEY (Cod_Prod)
+    PRIMARY KEY (Cod_Mascota,Cod_Prod),
+		FOREIGN KEY (cod_Mascota) REFERENCES Mascotas (cod_mascota) ON UPDATE CASCADE ON DELETE RESTRICT,
+		FOREIGN KEY (Cod_Prod) REFERENCES Productos (cod_Prod) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE Registros (
@@ -237,6 +213,26 @@ CREATE TABLE Facturas (
     Tipo varchar(10) NOT NULL,
 
     PRIMARY KEY (Cod_Factura)
+);
+
+CREATE TABLE Homepet_Vende_Producto (
+    Cod_Prod dom_codigo,
+    RIF dom_codigo,
+    Cod_Factura dom_codigo,
+
+    PRIMARY KEY (Cod_Prod, RIF, Cod_Factura),
+    FOREIGN KEY (Cod_Prod)
+        REFERENCES Productos (Cod_Prod)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    FOREIGN KEY (RIF)
+        REFERENCES Homepets (RIF)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    FOREIGN KEY (Cod_Factura)
+        REFERENCES Facturas (Cod_Factura)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 );
 
 CREATE TABLE Proveedores (
@@ -322,21 +318,42 @@ CREATE TABLE Se_Especializan (
         ON DELETE RESTRICT
 );
 
+CREATE TABLE IF NOT EXISTS Vacunas (
+		Cod_Vacuna dom_codigo,
+		Nombre_Vacuna VARCHAR(20) NOT NULL,
+		Descripcion_Vacuna VARCHAR(30) NOT NULL,
+		Costo_Vacuna REAL,
+		
+		PRIMARY KEY (Cod_Vacuna)
+);
+
+CREATE TABLE IF NOT EXISTS Vacuna_Aplica_Mascota(
+		Cod_Vacuna dom_codigo,
+		Cod_Mascota dom_codigo,
+		Cod_Veterinario dom_codigo,
+		fecha_aplicacion VARCHAR(10) NOT NULL,
+		Dosis_cc INTEGER NOT NULL,
+		
+		PRIMARY KEY (Cod_Mascota, Cod_Vacuna, Cod_Veterinario),
+		FOREIGN KEY (Cod_Mascota) REFERENCES Mascotas (Cod_Mascota) ON UPDATE CASCADE ON DELETE RESTRICT,
+		FOREIGN KEY (Cod_Veterinario) REFERENCES Veterinarios (Cedula) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
 CREATE TABLE Vacuna_Aplica_Raza (
+		Cod_Vacuna dom_codigo,
     Cod_Raza dom_codigo,
-    Cod_Prod dom_codigo,
     Edad integer NOT NULL
         CHECK (Edad > '0'),
     Dosis_cc integer NOT NULL
         CHECK (Dosis_cc > '0'),
 
-    PRIMARY KEY (Cod_Raza, Cod_Prod),
-    FOREIGN KEY (Cod_Raza)
-        REFERENCES Razas (Cod_Raza)
+    PRIMARY KEY (Cod_Vacuna, Cod_Raza),
+		FOREIGN KEY (Cod_Vacuna)
+        REFERENCES Vacunas (Cod_Vacuna)
         ON UPDATE CASCADE
         ON DELETE RESTRICT,
-    FOREIGN KEY (Cod_Prod)
-        REFERENCES Productos (Cod_Prod)
+    FOREIGN KEY (Cod_Raza)
+        REFERENCES Razas (Cod_Raza)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
@@ -359,6 +376,7 @@ CREATE TABLE Homepet_Servicio (
 CREATE TABLE Visitas (
     Cedula dom_cedula,
     RIF_Homepet varchar(20) NOT NULL,
+		Cantidad_Visitas INTEGER,
 
     PRIMARY KEY (Cedula, RIF_Homepet),
     FOREIGN KEY (Cedula)
@@ -386,21 +404,6 @@ CREATE TABLE Personal_Ofrece_Servicio (
         ON DELETE RESTRICT
 );
 
-CREATE TABLE Homepet_Vende_Producto (
-    Cod_Prod varchar (5) NOT NULL,
-    RIF varchar (20) NOT NULL,
-
-    PRIMARY KEY (Cod_Prod, RIF),
-    FOREIGN KEY (Cod_Prod)
-        REFERENCES Productos (Cod_Prod)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (RIF)
-        REFERENCES Homepets (RIF)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-);
-
 CREATE TABLE Cantidad_A_Suministrar_Animal_Producto (
     Cod_Prod dom_codigo,
     Cod_Animal dom_codigo,
@@ -419,7 +422,7 @@ CREATE TABLE Cantidad_A_Suministrar_Animal_Producto (
 );
 
 CREATE TABLE Detalles_Animal_Para_Suministrar (
-    Cod_Animal dom_codigo,
+    Cod_Raza dom_codigo,
     Tamanio integer NOT NULL
         CHECK (Tamanio > '0'),
     Edad integer NOT NULL
@@ -427,12 +430,13 @@ CREATE TABLE Detalles_Animal_Para_Suministrar (
     Peso integer NOT NULL
         CHECK (Peso > '0'),
 
-    PRIMARY KEY (Cod_Animal),
-    FOREIGN KEY (Cod_Animal)
-        REFERENCES Animales (Cod_Animal)
+    PRIMARY KEY (Cod_Raza),
+    FOREIGN KEY (Cod_Raza)
+        REFERENCES Razas (Cod_Raza)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
 
 CREATE TABLE Proveedor_Distribuye_Producto (
     RIF_Proveedor varchar(20) NOT NULL,
@@ -451,6 +455,7 @@ CREATE TABLE Proveedor_Distribuye_Producto (
         ON DELETE RESTRICT
 );
 
+
 CREATE TABLE Orden_Remite_Producto (
     Cod_Orden dom_codigo,
     Cod_Prod dom_codigo,
@@ -466,11 +471,14 @@ CREATE TABLE Orden_Remite_Producto (
         ON DELETE RESTRICT
 );
 
-CREATE TABLE Registra_Mascota (
+CREATE TABLE Registra_Mascota_Servicio (
     Cod_Mascota dom_codigo,
     Cod_Registro dom_codigo,
+	Cod_Srvc dom_codigo,
+    Cod_Actividad dom_codigo,
 
-    PRIMARY KEY (Cod_Mascota, Cod_Registro),
+
+    PRIMARY KEY (Cod_Mascota, Cod_Registro, Cod_Srvc, Cod_Actividad),
     FOREIGN KEY (Cod_Mascota)
         REFERENCES Mascotas (Cod_Mascota)
         ON UPDATE CASCADE
@@ -478,8 +486,17 @@ CREATE TABLE Registra_Mascota (
     FOREIGN KEY (Cod_Registro)
         REFERENCES Registros (Cod_Registro)
         ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+		    FOREIGN KEY (Cod_Srvc)
+        REFERENCES Servicios (Cod_Srvc)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    FOREIGN KEY (Cod_Actividad)
+        REFERENCES Actividades (Cod_Actividad)
+        ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
 
 CREATE TABLE Factura_Genera_Servicio_Pagado_X_D (
     Cod_Factura dom_codigo,
@@ -501,25 +518,6 @@ CREATE TABLE Factura_Genera_Servicio_Pagado_X_D (
         ON DELETE RESTRICT
 );
 
-CREATE TABLE Registra_Servicio (
-    Cod_Registro dom_codigo,
-    Cod_Srvc dom_codigo,
-    Cod_Actividad dom_codigo,
-
-    PRIMARY KEY (Cod_Registro, Cod_Srvc, Cod_Actividad),
-    FOREIGN KEY (Cod_Registro)
-        REFERENCES Registros (Cod_Registro)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (Cod_Srvc)
-        REFERENCES Servicios (Cod_Srvc)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (Cod_Actividad)
-        REFERENCES Actividades (Cod_Actividad)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
-);
 
 CREATE TABLE Duenio_Paga_Factura (
     Cedula dom_cedula,
@@ -546,6 +544,7 @@ CREATE TABLE Duenio_Paga_Factura (
         ON DELETE RESTRICT
 );
 
+
 CREATE TABLE Proveedor_Cobra_Factura (
     Cod_Factura dom_codigo,
     RIF_Proveedor varchar(20) NOT NULL,
@@ -567,6 +566,7 @@ CREATE TABLE Proveedor_Cobra_Factura (
         ON DELETE RESTRICT
 );
 
+
 CREATE TABLE Cantidad_Entregada_Producto_Factura (
     Cod_Factura dom_codigo,
     Cod_Prod dom_codigo,
@@ -583,6 +583,7 @@ CREATE TABLE Cantidad_Entregada_Producto_Factura (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
 
 CREATE TABLE Personal_Consume_Producto_Para_Mascota (
     Cod_Srvc dom_codigo,
@@ -608,6 +609,7 @@ CREATE TABLE Personal_Consume_Producto_Para_Mascota (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
 
 CREATE TABLE Mascota_Reserva_Actividad (
     Cod_Actividad dom_codigo,
@@ -635,7 +637,7 @@ CREATE TABLE Mascota_Reserva_Actividad (
 );
 
 CREATE TABLE Mascota_Enfermedades (
-    Cod_Mascota dom_codigo,
+    Cod_Mascota dom_codigo NOT NULL,
     Enfermedades varchar(40) NOT NULL,
 
     PRIMARY KEY (Cod_Mascota, Enfermedades),
@@ -643,6 +645,17 @@ CREATE TABLE Mascota_Enfermedades (
         REFERENCES Mascotas (Cod_Mascota)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS Animal_Enfermedades(
+		Cod_Animal dom_codigo NOT NULL,
+		nombre_enfermedad VARCHAR(25) NOT NULL,
+		descripcion_enfemedad VARCHAR(60) NOT NULL,
+		gravedad VARCHAR(30) NOT NULL CHECK(gravedad = 'Leve' OR gravedad = 'Media' OR gravedad = 'Alta'),
+		cura VARCHAR(70),
+		
+		PRIMARY KEY (Cod_Animal, nombre_enfermedad),
+		FOREIGN KEY (Cod_Animal) REFERENCES Animales (Cod_Animal)
 );
 
 CREATE TABLE Duenio_Telefonos (
@@ -656,8 +669,9 @@ CREATE TABLE Duenio_Telefonos (
         ON DELETE RESTRICT
 );
 
+
 CREATE TABLE Empleado_Telefono (
-    Cedula dom_cedula,
+    Cedula dom_cedula NOT NULL,
     Telefono varchar (15) NOT NULL,
 
     PRIMARY KEY (Cedula, Telefono),
