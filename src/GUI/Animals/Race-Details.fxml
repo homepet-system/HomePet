@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="250.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="19.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <JFXButton fx:id="AnimalsDetailsBackBtn" styleClass="secundary-dark-text" text="Atrás" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="ARROW_CIRCLE_LEFT" size="2em" styleClass="secundary-dark" />
+                     </graphic>
+                     <font>
+                        <Font name="Raleway" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="225.0" fitWidth="200.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../resources/img/Animal's%20Races/Dogs/Golden%20Retriever.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" color="#2a9078" height="19.52" radius="10.372499999999999" width="23.97" />
+                     </effect></ImageView>
+                  <Label styleClass="primary-text" text="Golden Retriever" textFill="WHITE">
+                     <font>
+                        <Font name="Raleway Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <JFXButton fx:id="editButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="#007bff" glyphName="PENCIL" size="2em" styleClass="secundary-text" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="secundary-dark" />
+                              <String fx:value="rounded-btn" />
+                           </styleClass>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIcon fill="#007bff" glyphName="TRASH" size="2em" styleClass="secundary-text" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="secundary-dark" />
+                              <String fx:value="rounded-btn" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <HBox alignment="BOTTOM_CENTER" spacing="10.0">
+               <children>
+                  <FontAwesomeIcon fill="#b2b2b2" glyphName="PAW" size="2em" styleClass="secundary-light" />
+                  <FontAwesomeIcon fill="#b2b2b2" glyphName="PAW" size="2.8em" styleClass="secundary-light" />
+                  <FontAwesomeIcon fill="#b2b2b2" glyphName="PAW" size="3.6em" styleClass="secundary-light" />
+                  <FontAwesomeIcon fill="#b2b2b2" glyphName="PAW" size="4.4em" styleClass="secundary" />
+                  <FontAwesomeIcon glyphName="PAW" size="5.2em" styleClass="secundary-light" />
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="93.0">
+                     <children>
+                        <Label text="Gigante">
+                           <font>
+                              <Font name="Raleway Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Label text="Descripción">
+               <font>
+                  <Font name="Raleway Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Los golden retrievers son muy versátiles. Se los conoce como perdigueros, mascotas de familia, perros de apoyo para discapacitados y perros de búsqueda y rescate." textAlignment="JUSTIFY" wrappingWidth="518.0">
+               <font>
+                  <Font name="Raleway" size="16.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Constextura Fuerte:">
+                     <font>
+                        <Font name="Raleway Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Si">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Nivel de Inteligencia:">
+                     <font>
+                        <Font name="Raleway Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Media">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Color de Piel:">
+                     <font>
+                        <Font name="Raleway Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Dorado">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Altura:">
+                     <font>
+                        <Font name="Raleway Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="55 - 63 cm">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Peso:">
+                     <font>
+                        <Font name="Raleway Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="25 - 32 kg">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label text="Cantidad de Comida a Suministrar">
+               <font>
+                  <Font name="Raleway Bold" size="20.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" stylesheets="@../../css/secundaryLightScroll.css">
+               <content>
+                  <ListView prefHeight="137.0" prefWidth="516.0" styleClass="primary-light" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</HBox>
