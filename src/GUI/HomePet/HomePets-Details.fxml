@@ -5,14 +5,13 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePetDetailsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePetDetailsController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
@@ -23,7 +22,7 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="backBtn" styleClass="secundary-dark-text" text="Atrás" textFill="WHITE">
+                        <JFXButton fx:id="homepetBackBtn" styleClass="secundary-dark-text" text="Atrás" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIcon fill="WHITE" glyphName="ARROW_CIRCLE_LEFT" size="2em" styleClass="secundary-dark" />
                            </graphic>
@@ -35,10 +34,7 @@
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="homePetImage" fitHeight="225.0" fitWidth="200.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../../../../../Pictures/Wallpapers/calm_afternoon-wallpaper-1920x1080.jpg" />
-                           </image></ImageView>
+                        <ImageView fx:id="homepetImage" fitHeight="225.0" fitWidth="200.0" pickOnBounds="true" />
                         <Label styleClass="primary-text" text="HomePet" textFill="WHITE">
                            <font>
                               <Font name="Roboto Bold" size="24.0" />
@@ -47,7 +43,7 @@
                               <Insets top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="homePetLabel" styleClass="primary-text" text="Puerto Ordaz" textFill="WHITE">
+                        <Label fx:id="ciudadtLabel" styleClass="primary-text" text="Puerto Ordaz" textFill="WHITE">
                            <font>
                               <Font name="Roboto Bold" size="24.0" />
                            </font>

@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@../../css/styles.css" />
@@ -28,7 +27,7 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
                      <children>
-                        <JFXButton graphicTextGap="8.0" styleClass="secundary-dark-text" text="Atrás">
+                        <JFXButton fx:id="servicesBackBtn" graphicTextGap="8.0" styleClass="secundary-dark-text" text="Atrás">
                            <font>
                               <Font name="Raleway" size="14.0" />
                            </font>
@@ -40,8 +39,8 @@
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label styleClass="primary-text" text="Peluquería">
+                        <ImageView fx:id="servicesIcon" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="nameServiceLabel" styleClass="primary-text" text="Peluquería">
                            <font>
                               <Font name="Raleway Bold" size="24.0" />
                            </font>

@@ -22,7 +22,7 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
                      <children>
-                        <JFXButton contentDisplay="TOP" prefHeight="170.0" prefWidth="170.0" text="Perro">
+                        <JFXButton fx:id="animalBtn" contentDisplay="TOP" onAction="#showDetails" prefHeight="170.0" prefWidth="170.0" text="Perro">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
@@ -35,7 +35,7 @@
                               <Font name="Raleway" size="20.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton contentDisplay="TOP" prefHeight="170.0" prefWidth="170.0" text="Agregar">
+                        <JFXButton fx:id="addBtn" contentDisplay="TOP" onAction="#addAnimal" prefHeight="170.0" prefWidth="170.0" text="Agregar">
                            <styleClass>
                               <String fx:value="secundary-dark" />
                               <String fx:value="secundary-text" />

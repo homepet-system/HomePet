@@ -12,7 +12,7 @@
    <top>
       <Label contentDisplay="TOP" text="Productos que Posee" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Raleway" size="24.0" />
+            <Font name="Raleway Bold" size="24.0" />
          </font>
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />

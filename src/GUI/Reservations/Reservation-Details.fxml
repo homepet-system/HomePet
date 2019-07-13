@@ -75,7 +75,7 @@
                   <FontAwesomeIcon glyphName="CHILD" size="4.5em" />
                </graphic>
                <styleClass>
-                  <String fx:value="primary-dark" />
+                  <String fx:value="primary" />
                   <String fx:value="rounded-btn" />
                </styleClass>
             </JFXButton>
@@ -84,7 +84,7 @@
                   <FontAwesomeIcon glyphName="CREDIT_CARD" size="4.5em" />
                </graphic>
                <styleClass>
-                  <String fx:value="primary-dark" />
+                  <String fx:value="primary" />
                   <String fx:value="rounded-btn" />
                </styleClass>
             </JFXButton>
@@ -93,7 +93,7 @@
                   <FontAwesomeIcon fx:id="registerBtn" glyphName="CHECK" size="4.5em" />
                </graphic>
                <styleClass>
-                  <String fx:value="primary-dark" />
+                  <String fx:value="primary" />
                   <String fx:value="rounded-btn" />
                </styleClass>
             </JFXButton>

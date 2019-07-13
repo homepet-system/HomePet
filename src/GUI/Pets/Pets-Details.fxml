@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -35,15 +35,15 @@
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="225.0" fitWidth="200.0" pickOnBounds="true" smooth="false" />
-                        <Label styleClass="primary-text" text="Chuito" textFill="WHITE">
+                        <ImageView fx:id="petImage" fitHeight="225.0" fitWidth="200.0" pickOnBounds="true" smooth="false" />
+                        <Label fx:id="namePetsLabel" styleClass="primary-text" text="Chuito" textFill="WHITE">
                            <font>
                               <Font name="Raleway Bold" size="24.0" />
                            </font>
                         </Label>
                         <HBox alignment="TOP_CENTER" spacing="10.0">
                            <children>
-                              <JFXButton fx:id="editButton1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="WHITE">
+                              <JFXButton fx:id="editButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="WHITE">
                                  <graphic>
                                     <FontAwesomeIcon fill="#007bff" glyphName="PENCIL" size="2em" styleClass="secundary-text" />
                                  </graphic>
@@ -55,7 +55,7 @@
                                     <String fx:value="rounded-btn" />
                                  </styleClass>
                               </JFXButton>
-                              <JFXButton fx:id="deleteButton1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER">
+                              <JFXButton fx:id="deleteButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER">
                                  <graphic>
                                     <FontAwesomeIcon fill="#007bff" glyphName="TRASH" size="2em" styleClass="secundary-text" />
                                  </graphic>
@@ -73,19 +73,19 @@
                   </VBox>
                </children>
             </VBox>
-            <StackPane prefHeight="150.0" prefWidth="429.0" />
+            <StackPane fx:id="mobilePane" prefHeight="150.0" prefWidth="429.0" />
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="120.0" spacing="10.0">
                <children>
-                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+                  <JFXButton fx:id="btn1" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                      <styleClass>
-                        <String fx:value="primary" />
+                        <String fx:value="primary-dark" />
                         <String fx:value="rounded-btn" />
                      </styleClass>
                      <graphic>
                         <FontAwesomeIcon glyphName="USERS" size="4.5em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+                  <JFXButton fx:id="btn2" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                      <styleClass>
                         <String fx:value="primary" />
                         <String fx:value="rounded-btn" />
@@ -94,7 +94,7 @@
                         <FontAwesomeIcon glyphName="CHILD" size="4.5em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+                  <JFXButton fx:id="btn3" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                      <styleClass>
                         <String fx:value="primary" />
                         <String fx:value="rounded-btn" />
@@ -103,7 +103,7 @@
                         <FontAwesomeIcon glyphName="PAW" size="4.5em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+                  <JFXButton fx:id="btn4" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                      <styleClass>
                         <String fx:value="primary" />
                         <String fx:value="rounded-btn" />
@@ -112,7 +112,7 @@
                         <FontAwesomeIcon glyphName="DROPBOX" size="4.5em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+                  <JFXButton fx:id="btn5" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                      <styleClass>
                         <String fx:value="primary" />
                         <String fx:value="rounded-btn" />
