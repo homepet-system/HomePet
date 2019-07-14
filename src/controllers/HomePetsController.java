@@ -1,82 +1,86 @@
 package controllers;
 
+import API.supportClasses.ButtonsCreator;
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import main.Main;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class HomePetsController implements Initializable {
 
-    @FXML private ScrollPane scrollPane;
-    @FXML private AnchorPane anchorPane;
-    @FXML private JFXButton btnView;
+    //Buttons
+    @FXML private JFXButton homepetBtn;
     @FXML private JFXButton addBtn;
+
+    //Boxes
+    @FXML private HBox hBox;
+    @FXML private VBox vBox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        anchorPane.setPrefWidth(anchorPane.getPrefWidth()+10);
-        createBtn(8);
-        System.out.println(anchorPane.getChildren().get(0).getId());
+        hBox.getChildren().remove(1);
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("1");
+        arrayList.add("2");
+        arrayList.add("3");/*
+        arrayList.add("4");
+        arrayList.add("5");
+        arrayList.add("6");
+        arrayList.add("7");
+        arrayList.add("8");*/
+        if(arrayList.size()>=4){
+            ButtonsCreator.createBtnMore4(arrayList.size(),arrayList,hBox,vBox,homepetBtn,addBtn,125);
+        }else {
+            ButtonsCreator.createBtnLess4(arrayList.size(),arrayList,hBox,homepetBtn,addBtn,125);
+        }
+
+        EventHandler<ActionEvent> eh = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try{
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/HomePet/HomePets-Details.fxml"));
+                    Parent parent = (Parent)Main.myStage.getScene().getRoot().getChildrenUnmodifiable().get(1);
+                    parent = (Parent)parent.getChildrenUnmodifiable().get(1);
+                    ((Pane)parent).getChildren().setAll(root);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        ButtonsCreator.setBtns(arrayList.size(), vBox, eh);
     }
 
-    private void createBtn(int n){
-        int numDivisiones = (n)/4;
-        int x = 11;
-        int y = 8;
-        int actual = 1;
-        ImageView img;
 
-        System.out.println("Primer paso");
-            for(int j = 0; j<numDivisiones; j++){
-                x = 11;
-                System.out.println("Paso "+j);
-                for(int k = 0; k<4;k++){
-                    System.out.println("Paso paso "+k);
-                    JFXButton btn = new JFXButton(String.valueOf(actual));
-                    btn.getStyleClass().addAll("secundary","secundary-text","card");
-                    img = new ImageView(new Image("img/Users/85.jpg"));
-                    img.setPreserveRatio(false);
-                    img.setFitWidth(165);
-                    img.setFitHeight(120);
-                    btn.setPrefWidth(175);
-                    btn.setMaxWidth(175);
-                    btn.setMinWidth(175);
-                    btn.setPrefHeight(200);
-                    btn.setMaxHeight(200);
-                    btn.setMinHeight(200);
-                    btn.setGraphic(img);
-                    btn.setGraphicTextGap(15);
-                    btn.setContentDisplay(ContentDisplay.TOP);
-                    btn.alignmentProperty().set(Pos.TOP_CENTER);
-                    btn.setFont(new Font("Raleway",18));
-                    btn.setWrapText(true);
-                    btn.textAlignmentProperty().set(TextAlignment.CENTER);
-                    btn.setId("value-" + actual);
-                    btn.setLayoutX(x);
-                    btn.setLayoutY(y);
-                    anchorPane.getChildren().add(actual-1,btn);
-                    x +=188;
-                    actual+=1;
-                }
-                y+= 217;
-                if(y>anchorPane.getHeight())
-                    anchorPane.setPrefHeight(anchorPane.getHeight()+y);
-            }
 
-        x+=188;
-        y+=217;
-
-        addBtn.setLayoutX(x);
-        addBtn.setLayoutY(y);
+    @FXML public void registerHomepet(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/HomePet/HomePet-Register.fxml"));
+            Parent parent = (Parent)Main.myStage.getScene().getRoot().getChildrenUnmodifiable().get(1);
+            parent = (Parent)parent.getChildrenUnmodifiable().get(1);
+            ((Pane)parent).getChildren().add(1,root);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

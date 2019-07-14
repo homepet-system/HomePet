@@ -10,23 +10,33 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import main.Main;
 
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HomePetDetailsController implements Initializable {
 
+    //Panes
     @FXML private StackPane trasitionPane;
-    @FXML private JFXButton btn1;
-    @FXML private JFXButton btn2;
-    @FXML private JFXButton btn3;
-    @FXML private JFXButton btn4;
-    @FXML private JFXButton btn5;
+
+    //Buttons
+    @FXML private JFXButton homepetBackBtn;
+    @FXML private JFXButton editButton;
+    @FXML private JFXButton deleteButton;
+    @FXML private JFXButton saveButton;
+    @FXML private JFXButton cancelButton;
+
+    //Boxes
+    @FXML private HBox hBox1;
+    @FXML private HBox hBox2;
+
     private int currentBtn;
 
     private Parent[] parent = new Parent[4];
@@ -34,6 +44,7 @@ public class HomePetDetailsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        hBox2.getChildren().remove(0,2);
         currentBtn = 1;
         timeline = new Timeline();
         try{
@@ -63,15 +74,24 @@ public class HomePetDetailsController implements Initializable {
                     currentBtn = 3;
                     break;
             }
-            trasitionPane.getChildren().add(parent[currentBtn]);
-            KeyValue kv = new KeyValue(parent[currentBtn].translateYProperty(),0, Interpolator.EASE_IN);
-            KeyFrame kf = new KeyFrame(Duration.seconds(1),kv);
-            timeline.getKeyFrames().clear();
-            timeline.getKeyFrames().add(kf);
-            timeline.setOnFinished(actionEvent -> trasitionPane.getChildren().setAll(parent[currentBtn]));
-            timeline.setCycleCount(1);
-            timeline.play();
+            if(!trasitionPane.getChildren().get(0).equals(parent[currentBtn])){
+                trasitionPane.getChildren().add(parent[currentBtn]);
+                parent[currentBtn].translateYProperty().setValue(532);
+                KeyValue kv = new KeyValue(parent[currentBtn].translateYProperty(),0, Interpolator.EASE_IN);
+                KeyFrame kf = new KeyFrame(Duration.seconds(1),kv);
+                timeline.getKeyFrames().setAll(kf);
+                timeline.setOnFinished(actionEvent -> trasitionPane.getChildren().setAll(parent[currentBtn]));
+                timeline.setCycleCount(1);
+                timeline.play();
+            }
         }
+
+    }
+
+    @FXML public void edit(ActionEvent event) {
+    }
+
+    @FXML public void back(ActionEvent event){
 
     }
 }
