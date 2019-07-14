@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="429.0" styleClass="primary-light" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox prefHeight="532.0" prefWidth="454.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="227.0" prefWidth="427.0" styleClass="no-padding" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="employeeImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="encargadoName" styleClass="primary-text" text="Juanito Alcachofa">
+                     <font>
+                        <Font name="Raleway" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label styleClass="primary-dark-text" text="Encargado">
+                     <font>
+                        <Font name="Raleway" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="427.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="primary-text" text="Contacto">
+                                 <font>
+                                    <Font name="Raleway" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="tlfLabel" styleClass="primary-dark-text" text="0000-0000000">
+                                 <font>
+                                    <Font name="Raleway" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="primary-text" text="Desde">
+                                 <font>
+                                    <Font name="Raleway" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="fechaInicioLbl" styleClass="primary-dark-text" text="00-00-0000">
+                                 <font>
+                                    <Font name="Raleway" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="100.0" styleClass="all-transparent">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label styleClass="primary-text" text="Empleados">
+                     <font>
+                        <Font name="Raleway" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <ScrollPane prefHeight="266.0" prefWidth="542.0" styleClass="primary-light" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="267.0" prefWidth="427.0" spacing="15.0" styleClass="primary-light">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="190.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fx:id="employeeView" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label fx:id="employeeName" styleClass="primary-text" text="Petronila Ramos">
+                                 <font>
+                                    <Font name="Raleway" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light">
+                                 <content>
+                                    <JFXListView fx:id="serviceList" prefHeight="130.0" prefWidth="188.0" styleClass="primary-light" />
+                                 </content></ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
