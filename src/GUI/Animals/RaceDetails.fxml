@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXListView?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="429.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Animals.RaceListController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="429.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Animals.RaceListController">
    <top>
-      <Label text="Razas" BorderPane.alignment="CENTER">
+      <Label styleClass="primary-text" text="Razas" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" top="15.0" />
          </BorderPane.margin>
@@ -21,8 +22,12 @@
    <center>
       <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
          <content>
-            <JFXListView fx:id="raceListView" prefHeight="470.0" prefWidth="426.0" styleClass="primary-light" />
+            <JFXListView fx:id="raceListView" depth="10" prefHeight="470.0" prefWidth="426.0" styleClass="primary-light" />
          </content>
       </ScrollPane>
    </center>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/secundaryLightScroll.css" />
+   </stylesheets>
 </BorderPane>

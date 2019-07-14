@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -10,6 +10,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -18,13 +19,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
    <left>
       <VBox fx:id="menuBox" minHeight="0.0" minWidth="0.0" prefHeight="573.0" prefWidth="225.0" styleClass="secundary" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="5.0" styleClass="secundary-dark">
                <children>
-                  <FontAwesomeIcon glyphName="PAW" size="2.5em" styleClass="secundary-text" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../../../../Documents/Documentos/Universidad/Semestres/Sexto%20Semestre/Sistemas%20de%20Bases%20de%20Datos%20I/Practicas%20y%20Proyectos/Proyecto/Img/Logo/40/1x/Artboard%201mdpi.png" />
+                     </image></ImageView>
                   <Label styleClass="secundary-text" text="HomePet System">
                      <font>
                         <Font name="Raleway Bold" size="18.0" />
@@ -66,7 +70,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label styleClass="primary-text" text="Dashboard">
+                        <Label fx:id="windowTitle" styleClass="primary-text" text="Dashboard">
                            <font>
                               <Font name="Raleway Bold" size="24.0" />
                            </font>
@@ -74,18 +78,6 @@
                               <Insets left="20.0" right="30.0" />
                            </HBox.margin>
                         </Label>
-                        <BorderPane prefHeight="60.0" prefWidth="249.0">
-                           <right>
-                              <FontAwesomeIcon glyphName="SEARCH" size="1.5em" BorderPane.alignment="CENTER" />
-                           </right>
-                           <center>
-                              <JFXTextField promptText="Buscar..." BorderPane.alignment="CENTER">
-                                 <BorderPane.margin>
-                                    <Insets right="5.0" />
-                                 </BorderPane.margin>
-                              </JFXTextField>
-                           </center>
-                        </BorderPane>
                      </children>
                   </HBox>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0">
@@ -109,7 +101,7 @@
                           <menus>
                             <Menu mnemonicParsing="false" styleClass="primary">
                               <items>
-                                <MenuItem mnemonicParsing="false" text="Close" />
+                                <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#closeApplication" text="Close" />
                               </items>
                                  <graphic>
                                     <ImageView fx:id="imageCircleTwo" fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" />
@@ -124,4 +116,8 @@
          </children>
       </VBox>
    </center>
+   <stylesheets>
+      <URL value="@../css/styles.css" />
+      <URL value="@../css/primaryScroll.css" />
+   </stylesheets>
 </BorderPane>

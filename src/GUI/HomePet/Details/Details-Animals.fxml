@@ -72,7 +72,7 @@
          <children>
             <Label contentDisplay="TOP" styleClass="primary-text" text="Especialización">
                <font>
-                  <Font name="Raleway" size="28.0" />
+                  <Font name="Raleway Bold" size="28.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="10.0" />

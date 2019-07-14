@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Owners.OwnersController">
    <top>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,33 +24,33 @@
       </HBox>
    </top>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="480.0" prefWidth="797.0" styleClass="primary-light">
+            <VBox fx:id="vBox" prefHeight="488.0" prefWidth="797.0" styleClass="primary-light">
                <children>
-                  <HBox prefHeight="175.0" prefWidth="200.0" spacing="20.0">
+                  <HBox fx:id="hBox" prefHeight="175.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <JFXButton contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Pedro Pérez">
+                        <JFXButton fx:id="ownerBtn" contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Pedro Pérez">
                            <styleClass>
                               <String fx:value="secundary" />
                               <String fx:value="card" />
                               <String fx:value="secundary-text" />
                            </styleClass>
                            <font>
-                              <Font name="Raleway" size="16.0" />
+                              <Font name="Raleway Bold" size="20.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" />
                            </graphic>
                         </JFXButton>
-                        <JFXButton contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Agregar">
+                        <JFXButton fx:id="addBtn" contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Agregar">
                            <styleClass>
                               <String fx:value="secundary-dark" />
                               <String fx:value="card" />
                               <String fx:value="secundary-text" />
                            </styleClass>
                            <font>
-                              <Font name="Raleway Bold" size="16.0" />
+                              <Font name="Raleway Bold" size="20.0" />
                            </font>
                            <graphic>
                               <FontAwesomeIcon glyphName="PLUS" size="5.5em" styleClass="secundary-text" />

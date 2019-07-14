@@ -21,7 +21,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <JFXButton fx:id="backBtn" graphicTextGap="10.0" styleClass="secundary-dark-text" text="Atrás">
+                  <JFXButton fx:id="employeeBackBtn" graphicTextGap="10.0" styleClass="secundary-dark-text" text="Atrás">
                      <graphic>
                         <FontAwesomeIcon glyphName="ARROW_CIRCLE_LEFT" size="2em" styleClass="secundary-dark" />
                      </graphic>
@@ -68,7 +68,7 @@
       <StackPane fx:id="mobilePane" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="125.0" spacing="15.0">
          <children>
-            <JFXButton fx:id="infoBtn" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+            <JFXButton fx:id="btn1" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                <graphic>
                   <FontAwesomeIcon glyphName="INFO" size="4.5em" />
                </graphic>
@@ -77,7 +77,7 @@
                   <String fx:value="rounded-btn" />
                </styleClass>
             </JFXButton>
-            <JFXButton fx:id="servicesBtn" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
+            <JFXButton fx:id="btn2" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="88.0" prefWidth="88.0">
                <graphic>
                   <FontAwesomeIcon glyphName="COGS" size="4.5em" />
                </graphic>

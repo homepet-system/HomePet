@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
@@ -11,18 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Animals.AnimalsController">
    <center>
       <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="530.0" prefWidth="797.0" styleClass="primary-light">
+            <VBox fx:id="vBox" prefHeight="538.0" prefWidth="797.0" spacing="15.0" styleClass="primary-light">
                <children>
-                  <HBox prefHeight="200.0" prefWidth="200.0" spacing="30.0">
-                     <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </padding>
+                  <HBox fx:id="hBox" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <JFXButton contentDisplay="TOP" prefHeight="170.0" prefWidth="170.0" text="Perro">
+                        <JFXButton fx:id="animalBtn" contentDisplay="TOP" onAction="#showDetails" prefHeight="170.0" prefWidth="170.0" text="Perro">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
@@ -32,10 +30,10 @@
                               <String fx:value="card" />
                            </styleClass>
                            <font>
-                              <Font name="Raleway" size="20.0" />
+                              <Font name="Raleway Bold" size="20.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton contentDisplay="TOP" prefHeight="170.0" prefWidth="170.0" text="Agregar">
+                        <JFXButton fx:id="addBtn" contentDisplay="TOP" onAction="#addAnimal" prefHeight="170.0" prefWidth="170.0" text="Agregar">
                            <styleClass>
                               <String fx:value="secundary-dark" />
                               <String fx:value="secundary-text" />
@@ -50,8 +48,15 @@
                         </JFXButton>
                      </children></HBox>
                </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </padding>
             </VBox>
          </content>
       </ScrollPane>
    </center>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/secundaryLightScroll.css" />
+   </stylesheets>
 </BorderPane>
