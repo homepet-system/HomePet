@@ -1,0 +1,184 @@
+.primary{
+    -fx-background-color: #9fbdbf;
+    -fx-fill: #9fbdbf;
+}
+
+.primary-primary-text{
+    -fx-text-fill: #9fbdbf;
+}
+
+.primary-light{
+    -fx-background-color: #d0f0f2;
+    -fx-fill: #d0f0f2;
+}
+
+.primary-light-text{
+    -fx-text-fill: #d0f0f2;
+}
+
+.primary-dark{
+    -fx-background-color: #708d8f;
+    -fx-fill: #708d8f;
+}
+
+.primary-dark-text{
+    -fx-text-fill: #708d8f;
+}
+
+.secundary{
+    -fx-background-color: #2c8079;
+    -fx-fill: #2c8079;
+}
+
+.secundary-secundary-text{
+    -fx-text-fill: #2c8079;
+}
+
+.secundary-light{
+    -fx-background-color: #5fb0a8;
+    -fx-fill: #5fb0a8;
+}
+
+.secundary-light-text{
+    -fx-text-fill: #5fb0a8;
+}
+
+.secundary-dark{
+    -fx-background-color: #00534d;
+    -fx-fill: #00534d;
+}
+
+.secundary-dark-text{
+    -fx-text-fill: #00534d;
+}
+
+.primary-text{
+    -fx-text-fill : #000000;
+    -fx-fill: #000000;
+}
+
+.secundary-text{
+    -fx-text-fill : #FFFFFF;
+    -fx-fill: #FFFFFF;
+}
+
+.rounded-label{
+     -fx-background-radius: 40;
+     -fx-border-radius: 40;
+     -fx-padding: 3;
+     -fx-font-weight: bold;
+     -fx-pref-height: 20;
+     -fx-pref-width: 20;
+}
+
+.show-hide-btn{
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+}
+
+.show-hide-btn:hover{
+    -fx-background-color: #708d8f;
+}
+
+.all-transparent{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-fill: transparent;
+    -fx-stroke-width: 0px;
+}
+
+.without-rounded{
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+}
+
+.rounded-label{
+    -fx-padding: 3;
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+}
+
+.rounded-btn{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+}
+
+.item{
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 0 4;
+}
+
+.item:hover{
+    -fx-background-color: #5fb0a8;
+}
+
+.item-selected{
+    -fx-border-color: #d0f0f2;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #00534d;
+}
+
+.card{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+#menuBar{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.full-border{
+    -fx-border-width: 8;
+}
+
+.primary-border{
+    -fx-border-color : #9fbdbf;
+}
+
+.primary-light-border{
+    -fx-border-color : #d0f0f2;
+}
+
+.primary-dark-border{
+    -fx-border-color : #708d8f;
+}
+
+.secundary-border{
+    -fx-border-color : #2c8079;
+}
+
+.secundary-light-border{
+    -fx-border-color : #5fb0a8;
+}
+
+.secundary-dark-border{
+    -fx-border-color : #00534d;
+}
+
+.primary-border-text{
+    -fx-border-color : #000000;
+}
+
+.secundary-border-text{
+    -fx-border-color : #FFFFFF;
+}
+
+.no-padding{
+    -fx-padding: 0;
+}
+
+.raleway{
+    -fx-font-family: Raleway;
+}
+
+.parent{
+    -fx-fill: transparent;
+    -fx-background-color: transparent;
+}
+
+.separator{
+    -fx-background-color: #2c8079;
+    -fx-border-color: #2c8079;
+    -fx-fill: #2c8079;
+}

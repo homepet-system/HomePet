@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="532.0" prefWidth="799.0" styleClass="all-transparent" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label styleClass="primary-text" text="¡Bienvenido," textFill="#757575">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label styleClass="primary-text" text="Juanito Alcachofa!" textFill="#757575">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <JFXTabPane prefHeight="584.0" prefWidth="797.0" VBox.vgrow="ALWAYS">
+         <tabs>
+            <Tab text="Untitled Tab">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </content>
+            </Tab>
+            <Tab text="Untitled Tab">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+     <!-- <JFXTabPane prefHeight="480.0" prefWidth="824.0" stylesheets="@../css/styles.css">
+         <tabs>
+            <Tab styleClass="tab-header" text="Sumario">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXScrollPane layoutX="-4.0" prefHeight="443.0" prefWidth="829.0" style="-fx-background-color: transparent;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Servicios">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>-->
+   </children>
+</VBox>

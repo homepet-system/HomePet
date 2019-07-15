@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="424.0" styleClass="primary-light" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefWidth="100.0" spacing="10.0">
+         <children>
+            <FontAwesomeIcon glyphName="INFO_CIRCLE" size="7em" />
+            <Label styleClass="primary-text" text="Información">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label styleClass="primary-text" text="Dirección">
+               <font>
+                  <Font name="Raleway Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="primary-text" text="Av. Central Santander">
+               <font>
+                  <Font name="Raleway" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="primary-text" text="Teléfono">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Raleway Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label styleClass="primary-text" text="0000-0000000">
+               <font>
+                  <Font name="Raleway" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="primary-text" text="HomePet">
+               <font>
+                  <Font name="Raleway Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="primary-text" text="HomePet Puerto Ordaz">
+               <font>
+                  <Font name="Raleway" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="primary-text" text="Status">
+                           <font>
+                              <Font name="Raleway Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label styleClass="primary-text" text="Empleado">
+                           <font>
+                              <Font name="Raleway" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="primary-text" text="Fecha de Inicio">
+                           <font>
+                              <Font name="Raleway Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label styleClass="primary-text" text="00-00-0000">
+                           <font>
+                              <Font name="Raleway" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label styleClass="primary-text" text="Sueldo">
+               <font>
+                  <Font name="Raleway Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefWidth="424.0" spacing="5.0">
+               <children>
+                  <Label styleClass="primary-text" text="00.000.000">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label styleClass="primary-text" text="Bs.">
+                     <font>
+                        <Font name="Raleway" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

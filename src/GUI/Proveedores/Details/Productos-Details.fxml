@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="424.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefWidth="100.0" spacing="10.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+         <children>
+            <FontAwesomeIcon glyphName="CREDIT_CARD" size="7em" />
+            <Label styleClass="primary-text" text="Productos">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <ScrollPane prefHeight="338.0" prefWidth="424.0" styleClass="primary-light">
+         <content>
+            <TableView fx:id="TablaProductosPrecio" fixedCellSize="0.0" prefHeight="501.0" prefWidth="404.0">
+              <columns>
+                <TableColumn prefWidth="198.0" text="Producto" />
+                <TableColumn prefWidth="205.0" text="Precio" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../../css/styles.css" />
+      <URL value="@../../../css/secundaryLightScroll.css" />
+   </stylesheets>
+</VBox>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Pets.PetsController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXComboBox prefWidth="120.0" promptText="HomePet" />
+            <JFXComboBox prefWidth="120.0" promptText="Raza" />
+            <JFXComboBox prefWidth="120.0" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vBox" prefHeight="480.0" prefWidth="797.0" spacing="15.0" styleClass="primary-light">
+               <children>
+                  <HBox fx:id="hBox" alignment="CENTER_LEFT" prefWidth="797.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="petBtn" contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Chuito">
+                           <styleClass>
+                              <String fx:value="secundary" />
+                              <String fx:value="card" />
+                              <String fx:value="secundary-text" />
+                           </styleClass>
+                           <font>
+                              <Font name="Raleway Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="addBtn" contentDisplay="TOP" graphicTextGap="10.0" prefHeight="175.0" prefWidth="175.0" text="Agregar">
+                           <styleClass>
+                              <String fx:value="secundary-dark" />
+                              <String fx:value="card" />
+                              <String fx:value="secundary-text" />
+                           </styleClass>
+                           <font>
+                              <Font name="Raleway Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="PLUS" size="5em" styleClass="secundary-text" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/secundaryLightScroll.css" />
+   </stylesheets>
+</BorderPane>

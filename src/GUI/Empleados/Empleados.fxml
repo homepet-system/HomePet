@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="799.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Employees.EmpleadosController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXComboBox prefWidth="120.0" promptText="HomePet" />
+            <JFXComboBox prefWidth="120.0" promptText="Servicio" />
+            <JFXComboBox prefWidth="120.0" promptText="Actividad" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vBox" prefHeight="488.0" prefWidth="797.0" spacing="15.0" styleClass="primary-light">
+               <children>
+                  <HBox fx:id="hBox" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="employeeBtn" contentDisplay="TOP" graphicTextGap="10.0" prefHeight="200.0" prefWidth="180.0" text="Button">
+                           <styleClass>
+                              <String fx:value="secundary" />
+                              <String fx:value="secundary-text" />
+                              <String fx:value="card" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <font>
+                              <Font name="Raleway Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="addBtn" contentDisplay="TOP" prefHeight="200.0" prefWidth="180.0" text="Agregar">
+                           <styleClass>
+                              <String fx:value="secundary-dark" />
+                              <String fx:value="secundary-text" />
+                              <String fx:value="card" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="PLUS" size="6em" styleClass="secundary-text" />
+                           </graphic>
+                           <font>
+                              <Font name="Raleway Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/secundaryLightScroll.css" />
+   </stylesheets>
+</BorderPane>

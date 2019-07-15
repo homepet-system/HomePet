@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+   <left>
+      <VBox fx:id="menuBox" minHeight="0.0" minWidth="0.0" prefHeight="573.0" prefWidth="225.0" styleClass="secundary" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="5.0" styleClass="secundary-dark">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../../../../Documents/Documentos/Universidad/Semestres/Sexto%20Semestre/Sistemas%20de%20Bases%20de%20Datos%20I/Practicas%20y%20Proyectos/Proyecto/Img/Logo/40/1x/Artboard%201mdpi.png" />
+                     </image></ImageView>
+                  <Label styleClass="secundary-text" text="HomePet System">
+                     <font>
+                        <Font name="Raleway Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" styleClass="secundary">
+               <children>
+                  <ImageView fx:id="imageCircleOne" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="usernameLbl" styleClass="secundary-text" text="Juanito Alcachofa">
+                     <font>
+                        <Font name="Raleway" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cargoLbl" opacity="0.7" styleClass="secundary-text" text="Encargado">
+                     <font>
+                        <Font name="Noto Sans" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Separator prefWidth="200.0" styleClass="all-transparent" />
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="secundary" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="200.0" styleClass="primary">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="windowTitle" styleClass="primary-text" text="Dashboard">
+                           <font>
+                              <Font name="Raleway Bold" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0">
+                     <children>
+                        <FontAwesomeIcon fx:id="notification" glyphName="BELL" layoutX="18.0" layoutY="38.0" size="2em" />
+                        <Label layoutX="31.0" layoutY="8.0" text="20">
+                           <styleClass>
+                              <String fx:value="secundary-dark" />
+                              <String fx:value="secundary-text" />
+                              <String fx:value="rounded-label" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="90.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="80.0" styleClass="primary">
+                          <menus>
+                            <Menu mnemonicParsing="false" styleClass="primary">
+                              <items>
+                                <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#closeApplication" text="Close" />
+                              </items>
+                                 <graphic>
+                                    <ImageView fx:id="imageCircleTwo" fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </HBox>
+               </children></HBox>
+            <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <stylesheets>
+      <URL value="@../css/styles.css" />
+      <URL value="@../css/primaryScroll.css" />
+   </stylesheets>
+</BorderPane>
