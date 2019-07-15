@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="429.0" styleClass="primary-light" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="429.0" styleClass="primary-light" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Animals.WeaknessListController">
    <top>
       <Label text="Enfermedades" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -19,8 +24,33 @@
       </Label>
    </top>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" styleClass="primary-light" BorderPane.alignment="CENTER">
          <JFXListView fx:id="weaknessListView" prefHeight="471.0" prefWidth="427.0" styleClass="primary-light" />
       </ScrollPane>
    </center>
+   <bottom>
+      <HBox fx:id="hBox" alignment="CENTER" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="addBtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="Button">
+               <font>
+                  <Font name="Raleway" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="PLUS" size="1.5em" styleClass="secundary-text" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="secundary-dark" />
+                  <String fx:value="rounded-btn" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/secundaryLightScroll.css" />
+   </stylesheets>
 </BorderPane>

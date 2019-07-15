@@ -40,10 +40,10 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         staticWindowTitle = windowTitle;
         imageCircleOne.setClip(new Circle(imageCircleOne.getFitWidth()/2,imageCircleOne.getFitHeight()/2,50));
-        //imageCircleOne.setImage(new Image(getClass().getResourceAsStream("/resources/img/Users/81.jpg")));
+        imageCircleOne.setImage(new Image("img/users/men/men_5.jpg"));
 
         imageCircleTwo.setClip(new Circle(imageCircleTwo.getFitWidth()/2,imageCircleTwo.getFitHeight()/2,22));
-        //imageCircleTwo.setImage(imageCircleOne.getImage());
+        imageCircleTwo.setImage(imageCircleOne.getImage());
 
         try{
             content = FXMLLoader.load(getClass().getResource("../GUI/Menu.fxml"));

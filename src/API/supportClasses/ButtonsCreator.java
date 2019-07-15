@@ -34,8 +34,6 @@ public class ButtonsCreator {
         int maximo;
         int actualList = 0;
 
-        System.out.println(numDiv);
-
         if(n % 4 == 0){
             hBoxes = new HBox[numDiv+1];
             maximo = numDiv+1;

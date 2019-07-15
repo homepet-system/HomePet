@@ -40,7 +40,7 @@ public class HomePetDetailsController implements Initializable {
     private int currentBtn;
 
     private Parent[] parent = new Parent[4];
-    private Timeline timeline ;
+    private Timeline timeline;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

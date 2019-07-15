@@ -20,7 +20,6 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/Home.fxml"));
         myStage = stage;
         myStage.initStyle(StageStyle.TRANSPARENT);
-        myStage.setTitle("HomePet System");
         myStage.setScene(new Scene(root));
         myStage.show();
     }
