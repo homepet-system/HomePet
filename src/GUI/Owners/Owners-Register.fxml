@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="540.0" prefWidth="799.0" style="-fx-background-color: rgba(145,145,145,0.4);" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Owners.OwnersRegister">
+   <children>
+      <BorderPane layoutX="336.0" layoutY="148.0" prefHeight="200.0" prefWidth="200.0" styleClass="secundary" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <top>
+            <Label styleClass="secundary-text" text="Registro de Clientes" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <children>
+                  <HBox prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="secundary-text" text="Cédula:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <JFXTextField fx:id="cedulaField" prefWidth="150.0" styleClass="secundary-text" unFocusColor="WHITE">
+                                 <font>
+                                    <Font name="Raleway" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label styleClass="secundary-text" text="Nombre:">
+                                       <font>
+                                          <Font name="Raleway Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <JFXTextField fx:id="nombreField" prefWidth="250.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="secundary-text" text="Email:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <JFXTextField fx:id="emailField" prefWidth="300.0" styleClass="secundary-text" unFocusColor="WHITE">
+                                 <font>
+                                    <Font name="Raleway" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label styleClass="secundary-text" text="Teléfonos">
+                           <font>
+                              <Font name="Raleway Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="secundary" HBox.hgrow="ALWAYS">
+                           <content>
+                              <JFXListView fx:id="telefonosList" prefHeight="165.0" prefWidth="502.0" styleClass="secundary-light" />
+                           </content>
+                        </ScrollPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" spacing="15.0">
+                           <children>
+                              <Label styleClass="secundary-text" text="Agregar Teléfono:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="telefonoField" prefWidth="150.0" unFocusColor="WHITE" />
+                              <JFXButton fx:id="addTlf" contentDisplay="GRAPHIC_ONLY" text="Agregar">
+                                 <styleClass>
+                                    <String fx:value="primary-light" />
+                                    <String fx:value="card" />
+                                    <String fx:value="primary-text" />
+                                 </styleClass>
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <JFXButton fx:id="addBtn" text="Agregar" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+               <styleClass>
+                  <String fx:value="primary-light" />
+                  <String fx:value="card" />
+                  <String fx:value="primary-text" />
+               </styleClass>
+               <font>
+                  <Font name="Raleway Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

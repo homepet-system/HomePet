@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="540.0" prefWidth="799.0" style="-fx-background-color: rgba(145,145,145,0.4);" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Pets.PetsRegister">
+   <children>
+      <BorderPane layoutX="62.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" styleClass="secundary" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+         <top>
+            <Label styleClass="secundary-text" text="Registro de Mascotas" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Raleway Bold" size="24.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="secundary-text" text="Nombre:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <JFXTextField prefWidth="120.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" />
+                              <Label styleClass="secundary-text" text="Fecha Nacimiento:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                    <JFXDatePicker defaultColor="WHITE" prefWidth="150.0" style="-fx-font-family: Raleway; -fx-font-size: 14; -fx-text-fill: white;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <Label styleClass="secundary-text" text="Género:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <JFXComboBox prefWidth="120.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label prefWidth="67.0" styleClass="secundary-text" text="Dueño:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <JFXComboBox prefWidth="120.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" />
+                              <Label prefWidth="143.0" styleClass="secundary-text" text="Tipo de Animal:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <JFXComboBox prefWidth="150.0" unFocusColor="WHITE" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <Label prefWidth="61.0" styleClass="secundary-text" text="Raza:">
+                                 <font>
+                                    <Font name="Raleway Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <JFXComboBox prefWidth="120.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" />
+                        <Label styleClass="secundary-text" text="Veterinario:">
+                           <font>
+                              <Font name="Raleway Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <JFXComboBox prefWidth="150.0" unFocusColor="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="secundary-text" text="Familia en Homepet">
+                                 <font>
+                                    <Font name="Raleway Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane prefHeight="125.0" prefWidth="200.0" styleClass="secundary-light">
+                                 <content>
+                                    <JFXListView prefHeight="122.0" prefWidth="228.0" styleClass="secundary-light" />
+                                 </content>
+                              </ScrollPane>
+                              <JFXComboBox prefWidth="150.0" />
+                              <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="primary-light" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="secundary-text" text="Vacunas Aplicadas">
+                                 <font>
+                                    <Font name="Raleway Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane prefHeight="125.0" prefWidth="200.0" styleClass="secundary-light">
+                                 <content>
+                                    <JFXListView prefHeight="122.0" prefWidth="228.0" styleClass="secundary-light" />
+                                 </content>
+                              </ScrollPane>
+                              <JFXComboBox prefWidth="150.0" />
+                              <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="primary-light" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="secundary-text" text="Enfermedades Padecidas">
+                                 <font>
+                                    <Font name="Raleway Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane prefHeight="125.0" prefWidth="200.0" styleClass="secundary-light">
+                                 <content>
+                                    <JFXListView prefHeight="122.0" prefWidth="227.0" styleClass="secundary-light" />
+                                 </content>
+                              </ScrollPane>
+                              <JFXComboBox prefWidth="150.0" />
+                              <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="primary-light" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+         </center>
+         <bottom>
+            <JFXButton text="Agregar" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="Raleway Bold" size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="primary-light" />
+                  <String fx:value="card" />
+                  <String fx:value="primary-text" />
+               </styleClass>
+            </JFXButton>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
